@@ -1,0 +1,296 @@
+.contract-gen-main {
+    padding-top: 80px;
+    min-height: calc(100vh - 64px);
+    background: var(--secondary-background);
+}
+
+/* 步骤指示器 */
+.step-indicator {
+    max-width: 600px;
+    margin: 0 auto 40px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    padding: 0 20px;
+}
+
+.step-indicator::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 40px;
+    right: 40px;
+    height: 2px;
+    background: #ddd;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.step {
+    position: relative;
+    background: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    color: #999;
+    font-size: 14px;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.step.active {
+    background: var(--primary-color);
+    color: white;
+}
+
+/* 合同类型选择页面 */
+.contract-type-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.contract-card {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.contract-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    border-color: var(--primary-color);
+}
+
+.card-icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 16px;
+    background: var(--secondary-background);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+}
+
+.contract-card h3 {
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.contract-card p {
+    color: #666;
+    font-size: 14px;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .contract-type-grid {
+        grid-template-columns: 1fr;
+        padding: 16px;
+    }
+
+    .step-indicator {
+        padding: 0 16px;
+    }
+}
+
+/* 页面切换动画 */
+.page-container {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+/* 表单样式 */
+.form-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.form-section {
+    margin-bottom: 30px;
+}
+
+.form-section h3 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 1.2em;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #666;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.1);
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 16px;
+    margin-top: 30px;
+}
+
+.secondary-btn {
+    padding: 8px 16px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background: white;
+    color: #666;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.secondary-btn:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+/* 文本域样式 */
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    resize: vertical;
+    min-height: 80px;
+    transition: all 0.3s ease;
+}
+
+.form-group textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.1);
+}
+
+/* 输入组合样式 */
+.rent-input,
+.deposit-input {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.rent-input input,
+.deposit-input input {
+    flex: 1;
+}
+
+.rent-input span,
+.deposit-input span {
+    color: #666;
+    white-space: nowrap;
+}
+
+/* 日期范围样式 */
+.date-range {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.date-range input {
+    flex: 1;
+}
+
+.date-range span {
+    color: #666;
+}
+
+/* 预览页面样式 */
+.preview-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.preview-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.preview-actions {
+    display: flex;
+    gap: 16px;
+}
+
+.preview-content {
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    min-height: 500px;
+}
+
+.contract-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.contract-section {
+    margin-bottom: 20px;
+}
+
+.contract-section h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.contract-section p {
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+.contract-signatures {
+    margin-top: 50px;
+}
+
+.signature-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+[contenteditable="true"]:focus {
+    outline: 2px solid var(--primary-color);
+    border-radius: 4px;
+} 

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>法锤锤 - 您的AI法律助手</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth.css">
+    <!-- 先引入配置文件 -->
+    <script src="js/config.js"></script>
+    
+    <!-- 阿里云验证码SDK -->
+    <script src="https://g.alicdn.com/AWSC/AWSC/awsc.js"></script>
+    <script>
+        // 确保 SDK 加载完成
+        window._nvc_nc = {
+            aliyun_nc_init: function(nc) {
+                window._nc = nc;
+            }
+        };
+    </script>
+    
+    <!-- 其他脚本放在底部 -->
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="nav-bar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html" class="logo">
+                    <img src="assets/fachui.svg" alt="法锤锤 Logo" class="logo-img">
+                    <div class="brand-text">
+                        <h1>法锤锤</h1>
+                        <p>您的AI法律助手</p>
+                    </div>
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">首页</a>
+                <a href="pages/ai-qa.html">法律问答</a>
+                <a href="pages/contract-analysis.html">合同分析</a>
+                <a href="pages/contract-gen.html">合同生成</a>
+                <div class="user-nav">
+                    <a href="#" class="login-btn" id="loginBtn">请登录/注册</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要内容区 -->
+    <main>
+        <!-- 欢迎区域 -->
+        <section class="hero">
+            <div class="container">
+                <h1>智能法律服务，触手可及</h1>
+                <p>基于AI技术，为您提供专业的法律咨询、合同分析和智能合同生成服务</p>
+            </div>
+        </section>
+
+        <!-- 功能卡片区 -->
+        <section class="features">
+            <div class="container">
+                <div class="feature-card" id="ai-qa">
+                    <div class="card-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24">
+                            <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <h3>AI法律问答</h3>
+                    <p>智能法律顾问，24小时在线解答您的法律问题</p>
+                    <button class="primary-btn">开始咨询</button>
+                </div>
+
+                <div class="feature-card" id="contract-analysis">
+                    <div class="card-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24">
+                            <path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zM6 20V4h7v5h5v11H6z" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <h3>合同风险分析</h3>
+                    <p>智能识别合同风险点，提供专业分析建议</p>
+                    <button class="primary-btn">开始分析</button>
+                </div>
+
+                <div class="feature-card" id="contract-gen">
+                    <div class="card-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24">
+                            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14z" fill="currentColor"/>
+                            <path d="M11 7h2v2h-2zM7 7h2v2H7zm8 0h2v2h-2z" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <h3>智能合同生成</h3>
+                    <p>快速生成标准合同，支持自定义条款</p>
+                    <button class="primary-btn">开始生成</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <p>© 2024 法锤锤. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- 底部脚本 -->
+    <script src="js/auth.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

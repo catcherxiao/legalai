@@ -1,0 +1,433 @@
+/* 基础样式重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #007AFF;
+    --text-color: #333333;
+    --background-color: #FFFFFF;
+    --secondary-background: #F5F5F7;
+    --border-radius: 12px;
+    --transition: all 0.3s ease;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 导航栏样式 */
+.nav-bar {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(20px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.nav-bar .container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 64px;
+    position: relative;
+    padding: 0 220px 0 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+
+.nav-brand {
+    margin-right: 48px;
+}
+
+.nav-brand a {
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-right: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: var(--transition);
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    background-color: var(--secondary-background);
+    color: var(--primary-color);
+}
+
+/* 主要内容区样式 */
+main {
+    margin-top: 64px;
+    flex: 1;
+    padding-bottom: 60px;
+}
+
+/* 欢迎区域样式 */
+.hero {
+    background: var(--secondary-background);
+    padding: 80px 0;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #007AFF, #5856D6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* 功能卡片区样式 */
+.features {
+    padding: 80px 0;
+}
+
+.features .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.feature-card {
+    background: var(--background-color);
+    border-radius: var(--border-radius);
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.card-icon {
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.feature-card h2 {
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.feature-card p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.feature-card .primary-btn {
+    margin-top: auto;
+}
+
+.feature-card button {
+    position: relative;
+    z-index: 2; /* 确保按钮在卡片之上，可以单独点击 */
+}
+
+/* 添加点击反馈效果 */
+.feature-card:active {
+    transform: translateY(-2px);
+}
+
+/* 按钮样式 */
+.primary-btn {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: var(--transition);
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+}
+
+.primary-btn:hover {
+    background: #0056b3;
+    transform: scale(1.05);
+}
+
+/* 页脚样式 */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    padding: 15px 0;
+    border-top: 1px solid #eee;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+    z-index: 1000;
+}
+
+footer .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer p {
+    margin: 0;
+    color: #666;
+    font-size: 14px;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .features .container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 确保链接按钮的颜色正确 */
+a.primary-btn {
+    color: white;
+}
+
+/* Logo 样式更新 */
+.nav-brand .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.logo-img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    display: block;
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.brand-text h1 {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+    color: var(--primary-color);
+}
+
+.brand-text p {
+    font-size: 12px;
+    margin: 0;
+    color: #666;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .brand-text p {
+        display: none;
+    }
+    .logo-img {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+/* 用户导航区域样式 */
+.user-nav {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 16px;
+    z-index: 100;
+}
+
+.login-btn {
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: var(--transition);
+    font-size: 1rem;
+    line-height: 1.5;
+    white-space: nowrap;
+}
+
+.login-btn:hover {
+    background-color: var(--secondary-background);
+    color: var(--primary-color);
+}
+
+/* 用户信息样式 */
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.user-nickname {
+    color: #3B82F6;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    transition: color 0.2s;
+}
+
+.user-nickname:hover {
+    color: #2563EB;
+    text-decoration: underline;
+}
+
+.logout-btn {
+    color: #6B7280;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+.logout-btn:hover {
+    background: #F3F4F6;
+    color: #374151;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .nav-bar .container {
+        padding-right: 120px;
+    }
+    
+    .nav-brand {
+        margin-right: 24px;
+    }
+    
+    .nav-links {
+        gap: 16px;
+    }
+    
+    .user-nav {
+        padding: 4px 8px;
+    }
+}
+
+/* 聊天消息区域样式 */
+.chat-messages {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px;
+}
+
+.chat-message {
+    display: flex;
+    gap: 16px;
+    padding: 16px;
+    border-radius: 12px;
+    background: #F9FAFB;
+    border: none;
+}
+
+/* 聊天输入区域样式 */
+.chat-input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    border: none;
+}
+
+.chat-input {
+    flex: 1;
+    min-height: 24px;
+    padding: 12px 16px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    line-height: 1.5;
+    resize: none;
+    background: transparent;
+}
+
+.send-btn {
+    padding: 10px 24px;
+    border: none;
+    border-radius: 8px;
+    background: #3B82F6;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    align-self: center;  /* 确保按钮垂直居中 */
+    white-space: nowrap;  /* 防止文字换行 */
+}
+
+.send-btn:hover {
+    background: #2563EB;
+}
+
+.send-btn:disabled {
+    background: #E5E7EB;
+    color: #9CA3AF;
+    cursor: not-allowed;
+}

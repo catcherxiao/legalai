@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>合同分析 - 法锤锤</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/auth.css">
+    <link rel="stylesheet" href="../css/contract-analysis.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="nav-bar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="../index.html" class="logo">
+                    <img src="../assets/fachui.svg" alt="法锤锤 Logo" class="logo-img">
+                    <div class="brand-text">
+                        <h1>法锤锤</h1>
+                        <p>您的AI法律助手</p>
+                    </div>
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="ai-qa.html">AI法律问答</a>
+                <a href="#" class="active">合同风险分析</a>
+                <a href="contract-gen.html">智能合同生成</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="analysis-container">
+        <div class="upload-section">
+            <h2>合同风险分析</h2>
+            <div class="input-area">
+                <textarea 
+                    id="contractText" 
+                    placeholder="请输入合同文本（最多5000字）..." 
+                    maxlength="5000"
+                    rows="10"
+                ></textarea>
+                <div class="word-count">
+                    <span id="currentCount">0</span>/5000
+                </div>
+                <button class="primary-btn" id="analyzeBtn">开始分析</button>
+            </div>
+        </div>
+        <div class="analysis-result" id="analysisResult" style="display: none;">
+            <div class="result-header">
+                <h2>合同分析报告</h2>
+            </div>
+            
+            <!-- 风险等级概览 -->
+            <div class="result-card">
+                <h3>风险等级</h3>
+                <div class="risk-level high">高风险</div>
+                <div class="risk-summary">共发现 12 处风险点，其中高风险 3 处，中风险 5 处，低风险 4 处</div>
+            </div>
+
+            <!-- 主要风险点 -->
+            <div class="result-card">
+                <h3>主要风险点</h3>
+                <div class="risk-list">
+                    <!-- 风险点将通过 JavaScript 动态添加 -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2024 法锤锤. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/auth.js" defer></script>
+    <script src="../js/contract-analysis.js" defer></script>
+</body>
+</html> 

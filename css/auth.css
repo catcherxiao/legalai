@@ -1,0 +1,199 @@
+/* 模态框样式更新 */
+.auth-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #f8fbff;  /* 更浅的蓝色背景 */
+    padding: 40px;
+    border-radius: 24px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+    width: 90%;
+    max-width: 460px;
+    z-index: 1001;
+}
+
+/* 标题样式 */
+.modal-header {
+    margin-bottom: 40px;
+}
+
+.modal-header h2 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* 表单样式优化 */
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* 手机号输入组 */
+.phone-group {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 4px;
+}
+
+.country-code {
+    padding: 12px 16px;
+    color: #333;
+    font-size: 16px;
+    border-right: 1px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.country-code:after {
+    content: "";
+    border-style: solid;
+    border-width: 5px 5px 0 5px;
+    border-color: #666 transparent transparent transparent;
+}
+
+.phone-input {
+    flex: 1;
+    border: none;
+    padding: 12px 16px;
+    font-size: 16px;
+    outline: none;
+}
+
+.phone-input::placeholder {
+    color: #999;
+}
+
+/* 验证码输入组 */
+.captcha-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.captcha-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.send-code-btn {
+    padding: 0 15px;
+    background: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.send-code-btn:disabled {
+    background: #f5f5f5;
+    color: #999;
+    cursor: not-allowed;
+}
+
+/* 登录按钮 */
+.primary-btn {
+    background: #4080ff;
+    color: white;
+    border: none;
+    padding: 14px 24px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 16px;
+}
+
+.primary-btn:hover {
+    background: #3070ef;
+    transform: translateY(-1px);
+}
+
+/* 协议勾选 */
+.agreement-check {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-top: 16px;
+    font-size: 14px;
+    color: #666;
+}
+
+.agreement-check input[type="checkbox"] {
+    margin-top: 3px;
+}
+
+.agreement-check a {
+    color: #4080ff;
+    text-decoration: none;
+}
+
+.agreement-check a:hover {
+    text-decoration: underline;
+}
+
+/* 模态框遮罩层 */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 1000;
+}
+
+/* 主内容区域在模态框打开时的效果 */
+body.modal-open {
+    overflow: hidden;
+}
+
+body.modal-open main,
+body.modal-open nav,
+body.modal-open footer {
+    filter: blur(8px);
+    transition: filter 0.3s ease;
+}
+
+/* 登录提示框样式 */
+.login-tip-modal {
+    max-width: 360px;
+    text-align: center;
+    padding: 32px;
+}
+
+.login-tip-modal .modal-header {
+    margin-bottom: 24px;
+}
+
+.login-tip-modal .modal-header h2 {
+    font-size: 24px;
+    color: #333;
+}
+
+.tip-message {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 24px;
+    line-height: 1.5;
+}
+
+.login-now-btn {
+    width: 100%;
+    padding: 12px 24px;
+    font-size: 16px;
+}

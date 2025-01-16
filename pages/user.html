@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户中心 - 法锤锤</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/user.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="nav-bar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="../index.html" class="logo">
+                    <img src="../assets/fachui.svg" alt="法锤锤 Logo" class="logo-img">
+                    <div class="brand-text">
+                        <h1>法锤锤</h1>
+                        <p>您的AI法律助手</p>
+                    </div>
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="../index.html">首页</a>
+                <a href="ai-qa.html">法律问答</a>
+                <a href="contract-analysis.html">合同分析</a>
+                <a href="contract-gen.html">合同生成</a>
+            </div>
+            <div class="user-nav">
+                <!-- 这里会通过 JavaScript 动态更新用户信息 -->
+                <div class="user-info">
+                    <a href="user.html" class="user-nickname"></a>
+                    <a href="javascript:void(0)" class="logout-btn">退出</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="user-container">
+        <div class="container">
+            <!-- 资料管理卡片 -->
+            <div class="profile-card">
+                <h3 class="card-title">资料管理</h3>
+                <div class="profile-content">
+                    <div class="profile-grid">
+                        <!-- 头像 -->
+                        <div class="profile-item">
+                            <div class="profile-header">
+                                <label>头像</label>
+                            </div>
+                            <div class="profile-field">
+                                <div class="avatar-placeholder">
+                                    <svg width="40" height="40" viewBox="0 0 24 24">
+                                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z" fill="currentColor"/>
+                                    </svg>
+                                </div>
+                                <input type="file" id="avatarInput" accept=".jpg,.jpeg,.png" hidden>
+                                <button class="edit-btn" onclick="document.getElementById('avatarInput').click()">
+                                    上传头像
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- 手机号 -->
+                        <div class="profile-item">
+                            <div class="profile-header">
+                                <label>手机号</label>
+                            </div>
+                            <div class="profile-field">
+                                <span class="field-value"></span>
+                                <button class="edit-btn">修改</button>
+                            </div>
+                        </div>
+
+                        <!-- 昵称 -->
+                        <div class="profile-item">
+                            <div class="profile-header">
+                                <label>昵称</label>
+                            </div>
+                            <div class="profile-field">
+                                <span class="field-value"></span>
+                                <input type="text" class="field-input" style="display: none;" placeholder="设置昵称">
+                                <button class="edit-btn">修改</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 积分信息卡片 -->
+            <div class="points-card">
+                <h3 class="card-title">我的积分</h3>
+                <div class="points-content">
+                    <div class="points-info">
+                        <div class="points-amount">
+                            <span class="points-value">1000</span>
+                            <span class="points-label">积分</span>
+                        </div>
+                        <button class="recharge-btn">充值积分</button>
+                    </div>
+                    <!-- 积分规则直接显示 -->
+                    <div class="points-rules">
+                        <div class="rules-item">AI 聊天：1点/次</div>
+                        <div class="rules-item">合同分析：100点/次</div>
+                        <div class="rules-item">合同生成：100点/次</div>
+                        <div class="rules-note">新用户赠送1000积分，充值比例：10元=1000积分</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 使用记录卡片 -->
+            <div class="history-card">
+                <h3 class="card-title">使用记录</h3>
+                <div class="history-content">
+                    <div class="history-list">
+                        <!-- 示例记录，实际应该通过 JavaScript 动态生成 -->
+                        <div class="history-item">
+                            <div class="history-info">
+                                <span class="history-type">法律问答</span>
+                                <span class="history-time">2024-01-04 19:30</span>
+                            </div>
+                            <div class="history-cost">-1积分</div>
+                        </div>
+                        <div class="history-item">
+                            <div class="history-info">
+                                <span class="history-type">合同分析</span>
+                                <span class="history-time">2024-01-04 18:20</span>
+                            </div>
+                            <div class="history-cost">-100积分</div>
+                        </div>
+                        <!-- 如果没有记录则显示空状态 -->
+                        <p class="empty-history" style="display: none;">暂无使用记录</p>
+                    </div>
+                    
+                    <!-- 分页控件 -->
+                    <div class="pagination">
+                        <button class="page-btn prev" disabled>上一页</button>
+                        <span class="page-info">第 1 页 / 共 1 页</span>
+                        <button class="page-btn next" disabled>下一页</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 充值弹窗 -->
+    <div id="rechargeModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h3>积分充值</h3>
+            <div class="recharge-options">
+                <div class="option" data-amount="1000" data-price="10">
+                    <span>1000积分</span>
+                    <span>￥10</span>
+                </div>
+                <div class="option" data-amount="3000" data-price="30">
+                    <span>3000积分</span>
+                    <span>￥30</span>
+                </div>
+                <div class="option" data-amount="5000" data-price="50">
+                    <span>5000积分</span>
+                    <span>￥50</span>
+                </div>
+            </div>
+            <div class="modal-buttons">
+                <button class="cancel">取消</button>
+                <button class="confirm">确认充值</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/auth.js"></script>
+    <script src="../js/user.js"></script>
+</body>
+</html> 

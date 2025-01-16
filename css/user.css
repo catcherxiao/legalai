@@ -1,0 +1,328 @@
+/* 用户中心整体布局 */
+.user-container {
+    padding: 40px 0;
+    margin-top: 64px;
+    background: #F8FAFC;
+    min-height: calc(100vh - 64px);
+}
+
+.user-container .container {
+    max-width: 1200px;
+    padding: 0 24px;
+}
+
+/* 卡片基础样式 */
+.profile-card,
+.points-card,
+.history-card {
+    background: white;
+    border-radius: 12px;
+    margin-bottom: 24px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.card-title {
+    font-size: 16px;
+    font-weight: 500;
+    color: #1F2937;
+    padding: 20px 24px;
+    margin: 0;
+    border-bottom: 1px solid #E5E7EB;
+}
+
+/* 资料管理卡片 */
+.profile-content {
+    padding: 24px;
+}
+
+.profile-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.profile-item {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* 标题行样式 */
+.profile-header {
+    height: 20px;  /* 固定高度确保对齐 */
+    display: flex;
+    align-items: center;
+}
+
+.profile-header label {
+    color: #6B7280;
+    font-size: 14px;
+}
+
+/* 内容区域样式 */
+.profile-field {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 40px;  /* 固定高度确保对齐 */
+}
+
+/* 头像样式 */
+.avatar-placeholder {
+    width: 40px;
+    height: 40px;
+    background: #F3F4F6;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #9CA3AF;
+    overflow: hidden;
+}
+
+.avatar-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 字段值样式 */
+.field-value {
+    flex: 1;
+    font-size: 16px;
+    color: #1F2937;
+}
+
+/* 编辑按钮样式 */
+.edit-btn {
+    padding: 6px 12px;
+    border: 1px solid #E5E7EB;
+    border-radius: 6px;
+    background: white;
+    color: #6B7280;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+}
+
+.edit-btn:hover {
+    background: #F9FAFB;
+    border-color: #D1D5DB;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .profile-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+/* 上传按钮容器样式 */
+.upload-item {
+    grid-column: 2;  /* 放在第二列 */
+    grid-row: 1;     /* 放在第一行 */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 32px;  /* 与其他项目对齐 */
+}
+
+.upload-btn {
+    padding: 6px 12px;
+    border: 1px solid #E5E7EB;
+    border-radius: 6px;
+    background: white;
+    color: #6B7280;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.upload-btn:hover {
+    background: #F9FAFB;
+    border-color: #D1D5DB;
+}
+
+.save-btn {
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    background: #3B82F6;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.save-btn:hover {
+    background: #2563EB;
+}
+
+/* 积分卡片 */
+.points-content {
+    padding: 24px;
+}
+
+.points-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.points-amount {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    padding-left: 24px;
+}
+
+.points-value {
+    font-size: 32px;
+    font-weight: 600;
+    color: #3B82F6;
+}
+
+.points-label {
+    color: #6B7280;
+}
+
+.recharge-btn {
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    background: #3B82F6;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.recharge-btn:hover {
+    background: #2563EB;
+}
+
+/* 积分规则样式 */
+.points-rules {
+    padding-left: 24px;
+    color: #6B7280;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.rules-item {
+    margin-bottom: 8px;
+}
+
+.rules-note {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid #E5E7EB;
+}
+
+/* 响应式调整 */
+@media (max-width: 640px) {
+    .points-info {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+    }
+
+    .points-amount,
+    .points-rules {
+        padding-left: 0;
+        justify-content: center;
+    }
+}
+
+/* 使用记录卡片 */
+.history-content {
+    padding: 24px;
+}
+
+.history-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.history-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    background: #F9FAFB;
+    border-radius: 8px;
+    transition: background-color 0.2s;
+}
+
+.history-item:hover {
+    background: #F3F4F6;
+}
+
+.history-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.history-type {
+    color: #1F2937;
+    font-weight: 500;
+}
+
+.history-time {
+    color: #6B7280;
+    font-size: 14px;
+}
+
+.history-cost {
+    color: #EF4444;  /* 红色表示消耗 */
+    font-weight: 500;
+}
+
+.empty-history {
+    text-align: center;
+    color: #6B7280;
+    padding: 40px 0;
+}
+
+/* 分页控件 */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid #E5E7EB;
+}
+
+.page-btn {
+    padding: 8px 16px;
+    border: 1px solid #E5E7EB;
+    border-radius: 6px;
+    background: white;
+    color: #374151;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.page-btn:hover:not(:disabled) {
+    background: #F9FAFB;
+    border-color: #D1D5DB;
+}
+
+.page-btn:disabled {
+    background: #F3F4F6;
+    color: #9CA3AF;
+    cursor: not-allowed;
+}
+
+.page-info {
+    color: #6B7280;
+    font-size: 14px;
+} 

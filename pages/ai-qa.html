@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>法律问答 - 法锤锤</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/auth.css">
+    <link rel="stylesheet" href="../css/ai-qa.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="nav-bar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="../index.html" class="logo">
+                    <img src="../assets/fachui.svg" alt="法锤锤 Logo" class="logo-img">
+                    <div class="brand-text">
+                        <h1>法锤锤</h1>
+                        <p>您的AI法律助手</p>
+                    </div>
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="../index.html">首页</a>
+                <a href="ai-qa.html" class="active">法律问答</a>
+                <a href="contract-analysis.html">合同分析</a>
+                <a href="contract-gen.html">合同生成</a>
+            </div>
+            <div class="user-nav">
+                <!-- 这里会通过 JavaScript 动态更新用户信息 -->
+                <div class="user-info">
+                    <a href="user.html" class="user-nickname"></a>
+                    <a href="javascript:void(0)" class="logout-btn">退出</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="chat-container">
+        <div class="chat-area">
+            <div class="chat-messages" id="chatMessages">
+                <!-- 消息将通过 JavaScript 动态添加 -->
+            </div>
+            <div class="chat-input">
+                <textarea id="userInput" placeholder="请输入您的法律问题..."></textarea>
+                <button id="sendButton" class="primary-btn">发送</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2024 法锤锤. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/auth.js" defer></script>
+    <script src="../js/chat.js" defer></script>
+</body>
+</html> 
